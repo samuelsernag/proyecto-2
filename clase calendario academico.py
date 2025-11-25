@@ -1,15 +1,16 @@
-from datetime import date
-
 class CalendarioAcademico:
-    """
-    Representa los eventos académicos del semestre.
-    """
-    def __init__(self, semestre: str):
-        self.__semestre = semestre
-        self.__eventos = []
+    def __init__(self, anio: int, semestre: int):
+        self.anio = anio
+        self.semestre = semestre
+        self.fechasImportantes = []  # List<String>
+        self.eventos = []            # List<String>
 
-    def agregarEvento(self, fecha: date, descripcion: str):
-        self.__eventos.append((fecha, descripcion))
+    def agregarEvento(self, evento: str):
+        self.eventos.append(evento)
 
-    def listarEventos(self):
-        return self.__eventos
+    def agregarFechaImportante(self, fecha: str):
+        self.fechasImportantes.append(fecha)
+
+    def mostrarCalendario(self):
+        pass
+
